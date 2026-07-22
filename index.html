@@ -4,90 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Full Name] - Portfolio</title>
+    
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Basic styling for structure and readability */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-        section { padding: 60px 20px; max-width: 900px; margin: auto; border-bottom: 1px solid #eaeaea; }
-        h1, h2, h3 { color: #222; }
-        ul { margin-bottom: 20px; }
         
-        /* Hero Section Styling */
-        #hero { text-align: center; padding-top: 80px; }
-        .profile-photo { width: 150px; height: 150px; border-radius: 50%; background-color: #ddd; object-fit: cover; margin-bottom: 20px; }
-        .btn { display: inline-block; padding: 10px 25px; background: #222; color: #fff; text-decoration: none; border-radius: 5px; margin-top: 15px; font-weight: bold; }
-        .btn:hover { background: #555; }
-
-        /* Grid Layouts for Skills & Services */
-        .grid-container { display: flex; gap: 20px; flex-wrap: wrap; }
-        .card { flex: 1; min-width: 250px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        
-        /* Form Styling */
-        form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; }
-        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; }
-        button { padding: 10px; background: #222; color: white; border: none; border-radius: 4px; cursor: pointer; }
-        
-        /* Footer Styling */
-        footer { background: #222; color: #fff; text-align: center; padding: 30px 20px; }
-        footer a { color: #ccc; text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: #fff; }
     </style>
 </head>
 <body>
 
-    <!-- 1. HERO SECTION -->
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <nav>
+            <div class="logo">[Logo/FN]</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. HERO SECTION WITH ANIMATED FRAME -->
     <section id="hero">
-        <!-- Replace 'placeholder.jpg' with the path to your actual image -->
-        <img src="placeholder.jpg" alt="Profile Photo of [Full Name]" class="profile-photo">
+        <div class="hero-content">
+            <h1>[Full Name]</h1>
+            <h2>[Content Creator | Freelancer | Lifelong Learner]</h2>
+            <p>[Write a short introduction about who you are and what you do best.]</p>
+            <a href="#contact" class="btn">Contact Me</a>
+        </div>
         
-        <h1>[Full Name]</h1>
-        <h2>[Short tagline, e.g., Content Creator | Freelancer | Lifelong Learner]</h2>
-        <p>[One-line introduction about who you are and what you do best.]</p>
-        
-        <a href="#contact" class="btn">Contact Me</a>
+        <div class="hero-figure-container">
+            <!-- Animated Frame Wrapper -->
+            <div class="profile-frame-wrapper">
+                <!-- Replace 'profile.jpg' with your image file -->
+                <img src="example.jpg" alt="[Full Name]" class="profile-photo-framed">
+            </div>
+        </div>
     </section>
 
     <!-- 2. ABOUT SECTION -->
     <section id="about">
         <h2>About Me</h2>
-        <!-- Keep it personal! Answer: Who am I? What do I enjoy? Interests? Motivation? Future goals? -->
-        <p>
-            [Write a paragraph introducing who you are personally. Mention what you enjoy doing in your free time and your general interests outside of just work.]
-        </p>
-        <p>
-            [Write a second paragraph covering what motivates you on a daily basis and what your personal and future goals look like.]
-        </p>
+        <div class="grid-container">
+            <div class="card">
+                <p>[Write a personal paragraph introducing who you are, your personal hobbies, and what you enjoy doing outside of work.]</p>
+            </div>
+            <div class="card">
+                <p>[Write a second paragraph about what motivates you daily and what your personal/future goals are.]</p>
+            </div>
+        </div>
     </section>
 
     <!-- 3. SKILLS SECTION -->
     <section id="skills">
-        <h2>Skills</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>Creative Skills</h3>
+                <h3><i class="fas fa-paint-brush"></i>Creative</h3>
                 <ul>
-                    <li>[e.g., Video Editing]</li>
-                    <li>[e.g., Thumbnail Design]</li>
-                    <li>[e.g., Photography]</li>
-                    <li>[e.g., Content Creation]</li>
+                    <li>[Video Editing]</li>
+                    <li>[Thumbnail Design]</li>
+                    <li>[Photography]</li>
+                    <li>[Content Creation]</li>
                 </ul>
             </div>
-            
             <div class="card">
-                <h3>Technical Skills</h3>
+                <h3><i class="fas fa-laptop-code"></i>Technical</h3>
                 <ul>
-                    <li>[e.g., Microsoft Office]</li>
-                    <li>[e.g., Basic Graphic Design]</li>
-                    <li>[e.g., Social Media Management]</li>
+                    <li>[Microsoft Office]</li>
+                    <li>[Basic Graphic Design]</li>
+                    <li>[Social Media Management]</li>
                 </ul>
             </div>
-
             <div class="card">
-                <h3>Soft Skills</h3>
+                <h3><i class="fas fa-users"></i>Soft Skills</h3>
                 <ul>
-                    <li>[e.g., Communication]</li>
-                    <li>[e.g., Time Management]</li>
-                    <li>[e.g., Problem Solving]</li>
-                    <li>[e.g., Creativity]</li>
+                    <li>[Communication]</li>
+                    <li>[Time Management]</li>
+                    <li>[Problem Solving]</li>
+                    <li>[Creativity]</li>
                 </ul>
             </div>
         </div>
@@ -96,25 +95,21 @@
     <!-- 4. EXPERIENCE SECTION -->
     <section id="experience">
         <h2>Experience</h2>
-        
-        <!-- Experience Item 1 -->
         <div class="experience-item">
-            <h3>[Freelance Role, e.g., Freelance Content Creator]</h3>
+            <h3>[Freelance Content Creator]</h3>
             <p><strong>[Year] – Present</strong></p>
             <ul>
-                <li>[e.g., Create digital content for online platforms.]</li>
-                <li>[e.g., Edit videos and design thumbnails.]</li>
-                <li>[e.g., Manage social media presence.]</li>
+                <li>[Create digital content for online platforms.]</li>
+                <li>[Edit videos and design thumbnails.]</li>
+                <li>[Manage social media presence.]</li>
             </ul>
         </div>
-
-        <!-- Experience Item 2 -->
         <div class="experience-item">
-            <h3>[Freelance Role, e.g., Freelance Video Editor]</h3>
+            <h3>[Freelance Video Editor]</h3>
             <p><strong>[Year] – Present</strong></p>
             <ul>
-                <li>[e.g., Edited videos for individual clients.]</li>
-                <li>[e.g., Delivered projects according to client requirements.]</li>
+                <li>[Edited videos for individual clients.]</li>
+                <li>[Delivered projects according to client requirements.]</li>
             </ul>
         </div>
     </section>
@@ -122,14 +117,11 @@
     <!-- 5. EDUCATION SECTION -->
     <section id="education">
         <h2>Education</h2>
-        
-        <div class="education-item">
+        <div class="card">
             <h3>[School/College Name]</h3>
-            <p><strong>[Degree/Major]</strong></p>
-            <p><em>[Duration, e.g., 2019 – 2023]</em></p>
-            <!-- Optional achievements bullet points -->
+            <p><strong>[Degree/Major]</strong> | <em>[Duration, e.g., 2020 – 2024]</em></p>
             <ul>
-                <li>[Optional: Relevant achievement, e.g., Graduated with Honors]</li>
+                <li>[Optional Achievement, e.g., Relevant Coursework/Honors]</li>
             </ul>
         </div>
     </section>
@@ -137,31 +129,31 @@
     <!-- 6. ACHIEVEMENTS SECTION -->
     <section id="achievements">
         <h2>Achievements</h2>
-        <ul>
-            <li>[e.g., Completed notable personal/freelance project]</li>
-            <li>[e.g., Academic achievement or scholarship]</li>
-            <li>[e.g., YouTube milestone or audience growth]</li>
-            <li>[e.g., Relevant certificate or workshop completed]</li>
-            <li>[e.g., Community involvement or volunteer work]</li>
-            <li>[e.g., Competition won or participated in]</li>
-        </ul>
+        <div class="card">
+            <ul>
+                <li>[Completed notable personal/freelance project]</li>
+                <li>[Academic achievement or scholarship]</li>
+                <li>[YouTube milestone or audience growth]</li>
+                <li>[Relevant certificate or workshop completed]</li>
+                <li>[Community involvement or volunteer work]</li>
+            </ul>
+        </div>
     </section>
 
     <!-- 7. SERVICES SECTION -->
     <section id="services">
-        <h2>Services Provided</h2>
         <div class="grid-container">
             <div class="card">
-                <h3>[Service 1, e.g., Video Editing]</h3>
-                <p>[Brief description of the service you offer and how you can help clients.]</p>
+                <h3><i class="fas fa-video"></i>[Video Editing]</h3>
+                <p>[Brief description of the service you offer.]</p>
             </div>
             <div class="card">
-                <h3>[Service 2, e.g., Thumbnail Design]</h3>
-                <p>[Brief description of the service you offer and how you can help clients.]</p>
+                <h3><i class="fas fa-image"></i>[Thumbnail Design]</h3>
+                <p>[Brief description of the service you offer.]</p>
             </div>
             <div class="card">
-                <h3>[Service 3, e.g., Social Media Content]</h3>
-                <p>[Brief description of the service you offer and how you can help clients.]</p>
+                <h3><i class="fas fa-share-nodes"></i>[Social Media Content]</h3>
+                <p>[Brief description of the service you offer.]</p>
             </div>
         </div>
     </section>
@@ -169,21 +161,21 @@
     <!-- 8. CONTACT SECTION -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>
-            <strong>Email:</strong> <a href="mailto:[Your Email]">[Your Email@example.com]</a><br>
-            <strong>Phone:</strong> [Your Phone Number] <!-- Optional --> <br>
-            <strong>Location:</strong> [Your City, State/Country]
-        </p>
+        <div class="grid-container" style="justify-content: center; text-align: center;">
+            <div class="card icon-text" style="flex: 0 1 100%; max-width: 400px;">
+                <p>
+                    <i class="fas fa-envelope"></i><a href="mailto:[YourEmail]">[YourEmail@example.com]</a><br>
+                    <i class="fas fa-phone"></i>[Your Phone Number]<br>
+                    <i class="fas fa-map-marker-alt"></i>[Your City, Country]
+                </p>
+                <div class="social-icons">
+                    <a href="[Link]" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="[Link]" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="[Link]" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
 
-        <!-- Social Media Links -->
-        <p>
-            <strong>Connect with me:</strong><br>
-            <a href="[Link]">[Platform 1, e.g., LinkedIn]</a> | 
-            <a href="[Link]">[Platform 2, e.g., YouTube]</a> | 
-            <a href="[Link]">[Platform 3, e.g., Instagram]</a>
-        </p>
-
-        <!-- Contact Form Placeholder -->
         <form action="#" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
@@ -194,23 +186,18 @@
 
     <!-- 9. FOOTER SECTION -->
     <footer>
-        <!-- Navigation Links -->
         <p>
             <a href="#hero">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
             <a href="#contact">Contact</a>
         </p>
-
-        <!-- Social Icons / Links (Duplicate for footer context) -->
-        <p>
-            <a href="[Link]">[LinkedIn]</a>
-            <a href="[Link]">[YouTube]</a>
-            <a href="[Link]">[Instagram]</a>
-        </p>
-
-        <!-- Short closing message and copyright -->
+        <div class="social-icons">
+            <a href="[Link]" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="[Link]" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="[Link]" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
         <p><em>[Short closing message, e.g., Let's build something great together!]</em></p>
         <p>&copy; 2026 [Full Name]. All rights reserved.</p>
     </footer>
