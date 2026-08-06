@@ -1,121 +1,565 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of [Full Name], content creator and freelancer.">
-  <meta name="theme-color" content="#f7f7fb">
-  <title>[Full Name] · Portfolio</title>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of Krishna Aryal, content creator and freelancer."
+    />
+    <meta name="theme-color" content="#f7f7fb" />
+    <title>Krishna Aryal · Portfolio</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700npm.cmd install next react react-dom&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="logo" href="#hero" aria-label="[Full Name] home"><span>FN</span> [Logo]</a>
-      <div class="nav-actions">
-        <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
-          <i class="fa-solid fa-moon" aria-hidden="true"></i>
-        </button>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
-          <span class="sr-only">Open menu</span><i class="fa-solid fa-bars" aria-hidden="true"></i>
-        </button>
-      </div>
-      <ul class="nav-links" id="primary-menu">
-        <li><a class="active" href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main-content">
-    <section class="hero section container" id="hero">
-      <div class="hero-content reveal">
-        <p class="eyebrow"><span></span> Available for select projects</p>
-        <h1>Hi, I’m <em>[Full Name]</em>.</h1>
-        <p class="hero-role">Content Creator <span>·</span> Freelancer <span>·</span> Lifelong Learner</p>
-        <p class="hero-copy">[Write a short introduction about who you are and what you do best.]</p>
-        <div class="hero-cta">
-          <a href="#contact" class="button button-primary">Let’s work together <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-          <a href="#about" class="text-link">Discover my story <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+    <header class="header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="logo" href="#hero" aria-label="[Full Name] home"
+          >Krishna Aryal</a
+        >
+        <ul class="nav-links nav-links-desktop" aria-label="Primary navigation">
+          <li><a class="active" href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a
+              href="assets/CV.pdf"
+              download="Krishna_Aryal_CV"
+              style="color: #6c4ed9"
+              >Download CV</a
+            >
+          </li>
+        </ul>
+        <div class="nav-controls">
+          <details class="site-menu">
+            <summary>
+              <span class="sr-only">Open menu</span
+              ><span class="menu-icon" aria-hidden="true"
+                ><span></span><span></span><span></span
+              ></span>
+            </summary>
+            <ul class="nav-links nav-links-mobile" id="primary-menu">
+              <li><a class="active" href="#hero">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#achievements">Achievements</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a
+                  href="assets/CV.pdf"
+                  download="Krishna_Aryal_CV"
+                  style="color: #6c4ed9"
+                  >Download CV
+                </a>
+              </li>
+            </ul>
+          </details>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            aria-pressed="false"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">
+              <i class="fa-solid fa-moon"></i>
+            </span>
+            <span class="theme-toggle-text">Dark</span>
+            <span class="sr-only">Switch color theme</span>
+          </button>
         </div>
-        <div class="hero-proof" aria-label="Professional qualities">
-          <span><i class="fa-solid fa-sparkles" aria-hidden="true"></i> Detail driven</span>
-          <span><i class="fa-solid fa-bolt" aria-hidden="true"></i> Fast turnaround</span>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero section container" id="hero">
+        <div class="hero-content reveal">
+          <h2>Hi, I’m <em>Krishna Aryal.</em></h2>
+          <p class="hero-role">
+            Content Creator <span>·</span> Freelancer <span>·</span> Lifelong
+            Learner
+          </p>
+          <p class="hero-copy">
+            I'm a freelance digital creator passionate about crafting engaging content and helping ideas come to life through creativity and quality.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="button button-primary"
+              >Let’s work together
+              <i
+                class="fa-solid fa-arrow-up-right-from-square"
+                aria-hidden="true"
+              ></i
+            ></a>
+            <a href="#about" class="text-link"
+              >Discover my story
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
+            ></a>
+          </div>
+          <div class="hero-proof" aria-label="Professional qualities">
+            <span
+              ><i class="fa-solid fa-sparkles" aria-hidden="true"></i> Detail
+              driven</span
+            >
+            <span
+              ><i class="fa-solid fa-bolt" aria-hidden="true"></i> Fast
+              turnaround</span
+            >
+          </div>
         </div>
-      </div>
-      <div class="hero-visual reveal">
-        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-        <div class="profile-frame-wrapper">
-          <img src="profile.jpg" alt="Portrait of [Full Name]" class="profile-photo-framed">
+        <div class="hero-visual reveal">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="profile-frame-wrapper">
+            <img
+              src="assets/profile.jpg"
+              alt="Portrait of Krishna Aryal"
+              class="profile-photo-framed"
+            />
+          </div>
+          <div class="floating-note">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i
+            ><span>Creative<br /><strong>thinking</strong></span>
+          </div>
         </div>
-        <div class="floating-note"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><span>Creative<br><strong>thinking</strong></span></div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section container" id="about">
-      <div class="section-heading reveal"><p class="eyebrow">01 · About</p><h2>A curious mind with <em>purpose.</em></h2></div>
-      <div class="about-grid">
-        <p class="about-lead reveal">I bring curiosity, craft, and an intentional point of view to every new project.</p>
-        <div class="content-stack">
-          <article class="card reveal"><p>[Write a personal paragraph introducing who you are, your personal hobbies, and what you enjoy doing outside of work.]</p></article>
-          <article class="card reveal"><p>[Write a second paragraph about what motivates you daily and what your personal/future goals are.]</p></article>
+      <section class="section container" id="about">
+        <div class="section-heading reveal">
+          <h2>A curious mind with <em>purpose.</em></h2>
         </div>
+        <div class="about-grid">
+          <div class="content-stack">
+            <article class="card reveal">
+              <p>
+                [Write a personal paragraph introducing who you are, your
+                personal hobbies, and what you enjoy doing outside of work.]
+              </p>
+            </article>
+            <article class="card reveal">
+              <p>
+                [Write a second paragraph about what motivates you daily and
+                what your personal/future goals are.]
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="skills">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Turning Ideas Into <em>impact.</em></h2>
+          </div>
+          <div class="grid-container skill-grid">
+            <article class="card skill-card reveal">
+              <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+              <h3>Creative</h3>
+              <ul>
+                <li>Video Editing</li>
+                <li>Thumbnail Design</li>
+                <li>Photography</li>
+                <li>Content Creation</li>
+              </ul>
+            </article>
+            <article class="card skill-card reveal">
+              <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+              <h3>Technical</h3>
+              <ul>
+                <li>Microsoft Office</li>
+                <li>Graphic Design</li>
+                <li>Social Media Management</li>
+              </ul>
+            </article>
+            <article class="card skill-card reveal">
+              <div class="card-icon"><i class="fas fa-users"></i></div>
+              <h3>Soft Skills</h3>
+              <ul>
+                <li>Communication</li>
+                <li>Time Management</li>
+                <li>Problem Solving</li>
+                <li>Creativity</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="achievements">
+        <div class="section-heading reveal">
+          <h2>Journey &<br /><em>Achievements.</em></h2>
+        </div>
+        <div class="timeline">
+          <article class="experience-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="experience-meta">[Year] – Present</div>
+            <div>
+              <h3>Freelance Content Creator</h3>
+              <ul>
+                <li>Create digital content for online platforms.</li>
+                <li>Edit videos and design thumbnails.</li>
+                <li>Manage social media presence.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="experience-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="experience-meta">[Year] – Present</div>
+            <div>
+              <h3>Freelance Video Editor</h3>
+              <ul>
+                <li>Edited videos for individual clients.</li>
+                <li>Delivered projects according to client requirements.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="education">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Education & <em>growth.</em></h2>
+          </div>
+          <article class="card education-card reveal">
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3>[School/College Name]</h3>
+              <p class="muted">
+                <strong>[Degree/Major]</strong> <span class="divider">|</span>
+                <em>[Duration, e.g., 2020 – 2024]</em>
+              </p>
+              <ul>
+                <li>
+                  [Optional Achievement, e.g., Relevant Coursework/Honors]
+                </li>
+              </ul>
+            </div>
+          </article>
+          <article class="card education-card reveal" style="margin-top: 1.5rem;">
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+              <h3>[Diploma Institution Name]</h3>
+              <p class="muted">
+                <strong>[Diploma Title]</strong> <span class="divider">|</span>
+                <em>[Duration, e.g., 2018 – 2020]</em>
+              </p>
+              <ul>
+                <li>[Relevant Coursework / Focus / Honor]</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-tint" id="services">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Made to make your work <em>shine.</em></h2>
+          </div>
+          <div class="grid-container service-grid">
+            <article class="card service-card reveal">
+              <div class="service-number">01</div>
+              <div class="card-icon"><i class="fas fa-video"></i></div>
+              <h3>Video Editing</h3>
+              <p>[Brief description of the service you offer.]</p>
+              <a href="#contact" class="text-link"
+                >Enquire now <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+            <article class="card service-card reveal">
+              <div class="service-number">02</div>
+              <div class="card-icon"><i class="fas fa-image"></i></div>
+              <h3>Thumbnail Design</h3>
+              <p>[Brief description of the service you offer.]</p>
+              <a href="#contact" class="text-link"
+                >Enquire now <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+            <article class="card service-card reveal">
+              <div class="service-number">03</div>
+              <div class="card-icon"><i class="fas fa-share-nodes"></i></div>
+              <h3>Social Media Content</h3>
+              <p>[Brief description of the service you offer.]</p>
+              <a href="#contact" class="text-link"
+                >Enquire now <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="contact">
+        <div class="contact-shell reveal">
+          <div class="contact-intro">
+            <h2>Let's Create <br /><em>Together?</em></h2>
+            <p class="talk">
+              Let’s talk about the idea and make something people remember.
+            </p>
+            <div class="contact-details">
+              <a href="mailto:krishnaaryal014@gmail.com" class="contact">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <p class="head">Email</p>
+                  <p>krishnaaryal014@gmail.com</p>
+                </div>
+              </a>
+              <a href="tel:+9779843874735" class="contact">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <p class="head">Phone</p>
+                  <p>+977 9843874735</p>
+                </div></a
+              >
+              <a href="https://www.google.com/maps/place/Shitalnagar,+Devdaha+Municipality+32900/@27.6498708,83.5699296,15z/data=!3m1!4b1!4m6!3m5!1s0x3996826fb7c251fb:0x82a2ef09f7cb7e8d!8m2!3d27.6504223!4d83.5789525!16s%2Fg%2F1tfcg4zq?entry=ttu&g_ep=EgoyMDI2MDcyOS4wIKXMDSoASAFQAw%3D%3D" class="contact">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <p class="head">Location</p>
+                  <p>Devdaha-8, Shitalnagar</p>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/krishna-aryal-a808072a7/" class="contact">
+                <i class="fab fa-linkedin"></i>
+                <div>
+                  <p class="head">LinkedIn</p>
+                  <p>Krishna Aryal</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <form id="contactForm" method="POST" accept-charset="UTF-8">
+            <label>
+              <span>Your name</span>
+              <input
+                type="text"
+                name="name"
+                placeholder="Rahul Chhetri"
+                autocomplete="name"
+              />
+            </label>
+
+            <label>
+              <span>Email address</span>
+              <input
+                type="email"
+                name="email"
+                placeholder="lazy@example.com"
+                autocomplete="email"
+              />
+            </label>
+
+            <label>
+              <span>Your message</span>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Tell me a little about your project ..."
+              ></textarea>
+            </label>
+
+            <button class="button button-primary" type="submit">
+              Send message
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <h3 class="logo" aria-label="[Full Name] home">Krishna Aryal</h3>
+        <p class="describe">Creative Video Editor & Content Creator</p>
+        <div class="social-icons">
+          <button
+            type="button"
+            class="social-btn"
+            data-modal="youtube"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </button>
+          <button
+            type="button"
+            class="social-btn"
+            data-modal="instagram"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </button>
+          <button
+            type="button"
+            class="social-btn"
+            data-modal="tiktok"
+            aria-label="TikTok"
+          >
+            <i class="fab fa-tiktok"></i>
+          </button>
+          <a href="https://kick.com/4flaggamer" target="_blank">
+            <img
+              id="kick-logo"
+              src="/frontend/assets/Kick_Logo_Dark.png"
+              alt="Kick"
+              class="social-icon"
+            />
+          </a>
+        </div>
+        <hr />
+        <p class="right">© 2026 Krishna Aryal. All rights reserved.</p>
       </div>
-    </section>
+      <!-- Social Channels Popup Modal -->
+<!-- Social Channels Popup Modal -->
+      <div class="social-modal-overlay" id="socialModal" aria-hidden="true">
+        <div class="social-modal-content">
+          <h3 id="modalTitle">Select Channel</h3>
 
-    <section class="section section-tint" id="skills">
-      <div class="container"><div class="section-heading reveal"><p class="eyebrow">02 · Expertise</p><h2>Skills that turn ideas into <em>impact.</em></h2></div>
-      <div class="grid-container skill-grid">
-        <article class="card skill-card reveal"><div class="card-icon"><i class="fas fa-paint-brush"></i></div><h3>Creative</h3><ul><li>Video Editing</li><li>Thumbnail Design</li><li>Photography</li><li>Content Creation</li></ul></article>
-        <article class="card skill-card reveal"><div class="card-icon"><i class="fas fa-laptop-code"></i></div><h3>Technical</h3><ul><li>Microsoft Office</li><li>Basic Graphic Design</li><li>Social Media Management</li></ul></article>
-        <article class="card skill-card reveal"><div class="card-icon"><i class="fas fa-users"></i></div><h3>Soft Skills</h3><ul><li>Communication</li><li>Time Management</li><li>Problem Solving</li><li>Creativity</li></ul></article>
-      </div></div>
-    </section>
+          <!-- YouTube Options (2 Channels) -->
+          <div class="modal-channel-group" id="youtubeChannels">
+            <a
+              href="https://www.youtube.com/@4flaggamer"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/officalpic.jpg"
+                alt="Channel 1"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Gamer</h4>
+                <span>Visit Channel &rarr;</span>
+              </div>
+            </a>
+            <a
+              href="https://www.youtube.com/@4flag.brothers"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/4flagbrother.jpg"
+                alt="Channel 2"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Brothers</h4>
+                <span>Visit Channel &rarr;</span>
+              </div>
+            </a>
+          </div>
 
-    <section class="section container" id="experience">
-      <div class="section-heading reveal"><p class="eyebrow">03 · Journey</p><h2>Building experience,<br>one project at a <em>time.</em></h2></div>
-      <div class="timeline">
-        <article class="experience-item reveal"><div class="timeline-marker"></div><div class="experience-meta">[Year] – Present</div><div><h3>Freelance Content Creator</h3><ul><li>Create digital content for online platforms.</li><li>Edit videos and design thumbnails.</li><li>Manage social media presence.</li></ul></div></article>
-        <article class="experience-item reveal"><div class="timeline-marker"></div><div class="experience-meta">[Year] – Present</div><div><h3>Freelance Video Editor</h3><ul><li>Edited videos for individual clients.</li><li>Delivered projects according to client requirements.</li></ul></div></article>
+          <!-- Instagram Options (2 Accounts) -->
+          <div class="modal-channel-group" id="instagramChannels">
+            <a
+              href="https://www.instagram.com/4flaggamer.official/"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/channelinsta.jpg"
+                alt="Account 1"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Gamer</h4>
+                <span>Visit Profile &rarr;</span>
+              </div>
+            </a>
+            <a
+              href="https://www.instagram.com/4flag.kisna/"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/krishnainsta.jpg"
+                alt="Account 2"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Krishna</h4>
+                <span>Visit Profile &rarr;</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- TikTok Options (2 Accounts) -->
+          <div class="modal-channel-group" id="tiktokChannels">
+            <a
+              href="https://www.tiktok.com/@4flag_gamer"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/officalpic.jpg"
+                alt="Account 1"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Gamer</h4>
+                <span>Visit Profile &rarr;</span>
+              </div>
+            </a>
+            <a
+              href="https://www.tiktok.com/@4flag_kisna"
+              target="_blank"
+              rel="noopener"
+              class="channel-card"
+            >
+              <img
+                src="assets/krishnatt.jpg"
+                alt="Account 2"
+                class="channel-avatar"
+              />
+              <div class="channel-info">
+                <h4>4Flag Krishna</h4>
+                <span>Visit Profile &rarr;</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Tap hint rendered outside content box -->
+        <div class="modal-tap-hint">Tap anywhere to close</div>
       </div>
-    </section>
+      <div id="customNotification" class="notification-banner">
+        <!-- Glowing Neon Bell with Alert Badge -->
+        <div class="notification-bell-box" aria-hidden="true">
+          <i class="fa-solid fa-bell bell-icon"></i>
+          <span class="bell-badge">!</span>
+          <span class="bell-glow-ring"></span>
+        </div>
 
-    <section class="section section-tint" id="education">
-      <div class="container"><div class="section-heading reveal"><p class="eyebrow">04 · Foundation</p><h2>Education & <em>growth.</em></h2></div>
-      <article class="card education-card reveal"><div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div><div><h3>[School/College Name]</h3><p class="muted"><strong>[Degree/Major]</strong> <span class="divider">|</span> <em>[Duration, e.g., 2020 – 2024]</em></p><ul><li>[Optional Achievement, e.g., Relevant Coursework/Honors]</li></ul></div></article></div>
-    </section>
-
-    <section class="section container" id="achievements">
-      <div class="section-heading reveal"><p class="eyebrow">05 · Milestones</p><h2>Small wins. Meaningful <em>progress.</em></h2></div>
-      <div class="achievement-list reveal">
-        <div><span>01</span><p>Completed notable personal/freelance project</p></div><div><span>02</span><p>Academic achievement or scholarship</p></div><div><span>03</span><p>YouTube milestone or audience growth</p></div><div><span>04</span><p>Relevant certificate or workshop completed</p></div><div><span>05</span><p>Community involvement or volunteer work</p></div>
+        <!-- Your existing text span (untouched for your JS) -->
+        <span id="notificationText"></span>
       </div>
-    </section>
-
-    <section class="section section-tint" id="services">
-      <div class="container"><div class="section-heading reveal"><p class="eyebrow">06 · Services</p><h2>Made to make your work <em>shine.</em></h2></div>
-      <div class="grid-container service-grid">
-        <article class="card service-card reveal"><div class="service-number">01</div><div class="card-icon"><i class="fas fa-video"></i></div><h3>Video Editing</h3><p>[Brief description of the service you offer.]</p><a href="#contact" class="text-link">Enquire now <i class="fa-solid fa-arrow-right"></i></a></article>
-        <article class="card service-card reveal"><div class="service-number">02</div><div class="card-icon"><i class="fas fa-image"></i></div><h3>Thumbnail Design</h3><p>[Brief description of the service you offer.]</p><a href="#contact" class="text-link">Enquire now <i class="fa-solid fa-arrow-right"></i></a></article>
-        <article class="card service-card reveal"><div class="service-number">03</div><div class="card-icon"><i class="fas fa-share-nodes"></i></div><h3>Social Media Content</h3><p>[Brief description of the service you offer.]</p><a href="#contact" class="text-link">Enquire now <i class="fa-solid fa-arrow-right"></i></a></article>
-      </div></div>
-    </section>
-
-    <section class="section container" id="contact">
-      <div class="contact-shell reveal"><div class="contact-intro"><p class="eyebrow">07 · Contact</p><h2>Have a project in <em>mind?</em></h2><p>Let’s talk about the idea and make something people remember.</p><div class="contact-details"><a href="mailto:[YourEmail]"><i class="fas fa-envelope"></i>[YourEmail@example.com]</a><span><i class="fas fa-phone"></i>[Your Phone Number]</span><span><i class="fas fa-map-marker-alt"></i>[Your City, Country]</span></div><div class="social-icons"><a href="[Link]" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="[Link]" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="[Link]" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
-      <form action="#" method="POST"><label><span>Your name</span><input type="text" name="name" placeholder="Jane Smith" autocomplete="name" required></label><label><span>Email address</span><input type="email" name="email" placeholder="jane@example.com" autocomplete="email" required></label><label><span>Your message</span><textarea name="message" rows="5" placeholder="Tell me a little about your project..." required></textarea></label><button class="button button-primary" type="submit">Send message <i class="fa-solid fa-arrow-up-right-from-square"></i></button></form></div>
-    </section>
-  </main>
-
-  <footer><div class="container footer-inner"><a class="logo" href="#hero"><span>FN</span> [Logo]</a><div class="footer-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#services">Services</a><a href="#contact">Contact</a></div><p>© 2026 [Full Name]. Made with intention.</p></div></footer>
-  <script src="script.js"></script>
-</body>
+    </footer>
+    <script src="JS/main.js"></script>
+    <script src="JS/contact.js"></script>
+  </body>
 </html>
