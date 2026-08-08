@@ -10,11 +10,6 @@
     <meta name="theme-color" content="#f7f7fb" />
     <title>Krishna Aryal · Portfolio</title>
     <script>
-      // Runs before anything paints. Only hide .reveal elements for the
-      // fade/slide-in effect if this browser can actually run the reveal
-      // JS (IntersectionObserver support). If this script is blocked,
-      // fails, or the browser is old, .reveal content stays visible by
-      // default (see styles.css) instead of being stuck invisible.
       if ('IntersectionObserver' in window) {
         document.documentElement.classList.add('js-reveal-ready');
       }
@@ -50,12 +45,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#contact">Contact</a></li>
           <li>
-            <a
-              href="assets/CV.pdf"
-              download="Krishna_Aryal_CV"
-              style="color: #6c4ed9"
-              >Download CV</a
-            >
+
           </li>
         </ul>
         <div class="nav-controls">
@@ -74,14 +64,6 @@
               <li><a href="#education">Education</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#contact">Contact</a></li>
-              <li>
-                <a
-                  href="assets/CV.pdf"
-                  download="Krishna_Aryal_CV"
-                  style="color: #6c4ed9"
-                  >Download CV
-                </a>
-              </li>
             </ul>
           </details>
           <button
@@ -112,15 +94,15 @@
             I'm a freelance digital creator passionate about crafting engaging content and helping ideas come to life through creativity and quality.
           </p>
           <div class="hero-cta">
-            <a href="#contact" class="button button-primary"
+            <a href="#contact" class="text-link" style="color: #6c4ed9"
               >Let’s work together
               <i
                 class="fa-solid fa-arrow-up-right-from-square"
                 aria-hidden="true"
               ></i
             ></a>
-            <a href="#about" class="text-link"
-              >Discover my story
+
+            <a href="assets/CV.pdf" download="Krishna_Aryal_CV" class="button button-primary">Download CV
               <i class="fa-solid fa-arrow-down" aria-hidden="true"></i
             ></a>
           </div>

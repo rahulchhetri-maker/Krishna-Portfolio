@@ -1445,7 +1445,7 @@ hr {
 .contact-details .fa-linkedin {
   font-size: 1.240rem;
 }
-@media (max-width: 940px) {
+@media (max-width: 845px) {
   .nav-links-desktop {
     display: none;
   }
