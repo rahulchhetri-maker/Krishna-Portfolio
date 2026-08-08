@@ -1684,6 +1684,22 @@ hr {
   }
 }
 @media (max-width: 520px) {
+    .hero-orbit {
+  position: absolute;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.orbit-one {
+  width: 80%;
+  height: 79%;
+  transform: rotate(-12deg);
+}
+.orbit-two {
+  width: 50%;
+  height: 115%;
+  transform: rotate(27deg);
+}
   .nav-links-desktop {
     display: none;
   }
