@@ -1164,6 +1164,83 @@ hr {
   }
 }
 /* =========================================================
+   REAL PLANET ORBITS
+   ========================================================= */
+
+/* Invisible tracks perfectly overlaying your existing orbit lines */
+.planet-track {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none; /* Let clicks pass through */
+}
+
+/* Base Planet Properties using modern CSS Motion Path */
+.planet {
+  position: absolute;
+  top: 0; left: 0;
+  /* Traces the elliptical path of its parent container */
+  offset-path: ellipse(50% 50% at 50% 50%);
+  offset-rotate: 0deg; /* Keeps planets upright (no wild spinning) */
+  animation: planet-orbit 15s linear infinite;
+}
+
+@keyframes planet-orbit {
+  0%   { offset-distance: 0%; }
+  100% { offset-distance: 100%; }
+}
+
+/* 🪐 Saturn (Orbit One) */
+.saturn {
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle at 30% 30%, #f4d093, #a57c3d);
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.5);
+  animation-duration: 22s; /* Slower outer orbit */
+}
+
+/* Saturn's Rings */
+.saturn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34px;
+  height: 8px;
+  border: 3px solid rgba(244, 208, 147, 0.85);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+}
+
+/* 🪐 Jupiter (Orbit Two) */
+.jupiter {
+  width: 24px;
+  height: 24px;
+  /* Striped gradient to mimic gas bands */
+  background: radial-gradient(circle at 30% 30%, transparent 60%, rgba(0,0,0,0.6)),
+              linear-gradient(to bottom,
+              #a08c75 10%, #d8cabd 25%, #87745e 40%,
+              #c5b6a2 55%, #a08c75 75%, #d8cabd 90%);
+  border-radius: 50%;
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.5);
+  animation-duration: 12s; /* Faster inner orbit */
+  animation-direction: reverse;
+}
+
+/* Jupiter's Great Red Spot */
+.jupiter::after {
+  content: '';
+  position: absolute;
+  top: 55%;
+  left: 35%;
+  width: 6px;
+  height: 4px;
+  background: rgba(180, 70, 50, 0.6);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+/* =========================================================
    FLOATING PILL TOAST & NEON ALERT BELL
    ========================================================= */
 
