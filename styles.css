@@ -12,6 +12,21 @@
     transition-timing-function: inherit !important;
   }
 }
+/* Force all animations and transitions to run globally */
+*,
+*::before,
+*::after {
+  animation-play-state: running !important;
+  transition: all 0.2s var(--ease) !important; /* Preserves smooth hover effects */
+}
+
+/* Ensure keyframe animations run continuously */
+.planet,
+.earth,
+.mars 
+{
+  animation-play-state: running !important;
+}
 :root {
   color-scheme: light;
   --bg: #f8f8fc;
