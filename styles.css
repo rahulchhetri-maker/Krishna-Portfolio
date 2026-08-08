@@ -1189,17 +1189,13 @@ hr {
 }
 
 @keyframes planet-orbit {
-  0%   { offset-distance: 29%; }
+  0%   { offset-distance: 0%; }
   100% { offset-distance: 100%; }
 }
 
 
-/* Update Earth's animation property */
-.p-earth {
-  animation: earth-orbit-behind 18s linear infinite !important;
-}
-
 /* 🌎 Earth (Orbit One) */
+
 .earth {
   width: 24px;
   height: 24px;
@@ -1207,10 +1203,12 @@ hr {
   background: radial-gradient(circle at 30% 30%, #4facfe 0%, #00f2fe 50%, #0250c5 100%);
   border-radius: 50%;
   box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6),
-              0 0 10px rgba(79, 172, 254, 0.4); /* Blue atmospheric glow */
-  animation-duration: 24s; /* Slower outer orbit */
+              0 0 10px rgba(79, 172, 254, 0.4);
+  
+  /* Match Mars's starting point */
+  animation: planet-orbit 24s linear infinite;
+  animation-delay: 0s; /* Standard start matching 0% / 100% path origin */
 }
-
 /* Earth's Green Landmasses */
 .earth::before {
   content: '';
