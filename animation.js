@@ -1,60 +1,51 @@
 /**
- * Global Animation Enforcer
- * Overrides OS/Browser reduced-motion settings and forces all animations to run.
+ * All-In-One Cross-Platform Animation Enforcer (JS)
+ * Forces all components to animate on Windows, macOS, Linux, iOS, and Android.
  */
-(function enforceSiteAnimations() {
-  // 1. Dynamically inject an override stylesheet into <head>
+(function enforceAllAnimations() {
+  // 1. Inject high-priority global rules into the document head
   const style = document.createElement('style');
-  style.id = 'force-animations-override';
+  style.id = 'cross-platform-animation-enforcer';
   style.textContent = `
-    /* Override OS/Browser reduced motion restrictions globally */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation-duration: unset !important;
-        animation-delay: unset !important;
-        animation-iteration-count: unset !important;
+        -webkit-animation-play-state: running !important;
         animation-play-state: running !important;
-        transition-duration: unset !important;
-      }
-
-      /* Explicitly force continuous keyframe animations */
-      body {
-        animation: pageFadeIn 0.5s ease-out forwards !important;
-      }
-
-      .profile-frame-wrapper {
-        animation: float 6s ease-in-out infinite !important;
-      }
-
-      .earth {
-        animation: earth-orbit-top 24s linear infinite !important;
-      }
-
-      .mars {
-        animation: mars-orbit-left-reverse 14s linear infinite !important;
-      }
-
-      .earth::after {
-        animation: moon-orbit 4s linear infinite !important;
-      }
-
-      /* Ensure scroll reveal elements remain visible */
-      .reveal {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
       }
     }
+    
+    .earth, .mars, .profile-frame-wrapper, .earth::after, .planet, .reveal {
+      -webkit-animation-play-state: running !important;
+      animation-play-state: running !important;
+    }
   `;
-
   document.head.appendChild(style);
 
-  // 2. Force animation play-state on DOM load
-  document.addEventListener('DOMContentLoaded', () => {
+  // 2. Force play states via DOM traversal for mobile/desktop rendering engines
+  const activateAnimations = () => {
     const animatedElements = document.querySelectorAll(
-      '.earth, .mars, .profile-frame-wrapper, .planet, .reveal'
+      '.earth, .mars, .profile-frame-wrapper, .planet, .reveal, [class*="anim"]'
     );
+
     animatedElements.forEach((el) => {
+      el.style.webkitAnimationPlayState = 'running';
       el.style.animationPlayState = 'running';
+      
+      // Prevent hidden states on mobile scroll elements
+      if (el.classList.contains('reveal')) {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }
     });
-  });
+  };
+
+  // Run on load, DOMContentLoaded, and window focus to catch mobile tab switches
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', activateAnimations);
+  } else {
+    activateAnimations();
+  }
+
+  window.addEventListener('load', activateAnimations);
+  window.addEventListener('pageshow', activateAnimations);
 })();
