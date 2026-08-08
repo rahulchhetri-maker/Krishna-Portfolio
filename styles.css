@@ -2,75 +2,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap");
 /* Force all website animations and transitions globally */
 /* Unconditionally force all animations across the site */
-/* =========================================================
-   GLOBAL OVERRIDE: FORCE ALL ANIMATIONS ON THE SITE
-   ========================================================= */
-/* =========================================================
-   ALL-IN-ONE CROSS-PLATFORM ANIMATION ENFORCER
-   (Windows, macOS, Linux, iOS, and Android)
-   ========================================================= */
-
-/* 1. Force hardware acceleration on everything to prevent browser throttling */
-*, *::before, *::after {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-/* 2. Explicitly target ALL animated elements and components */
-.earth, 
-.mars, 
-.profile-frame-wrapper, 
-.earth::after, 
-.planet, 
-.reveal, 
-header, 
-.card,
-[class*="anim"] {
-  -webkit-transform: translate3d(0, 0, 0) !important;
-  transform: translate3d(0, 0, 0) !important;
-  -webkit-animation-play-state: running !important;
-  animation-play-state: running !important;
-  will-change: transform, opacity;
-}
-
-/* 3. Bind exact keyframe definitions with Webkit prefixes for mobile/Apple devices */
-.earth {
-  -webkit-animation: earth-orbit-top 24s linear infinite !important;
-  animation: earth-orbit-top 24s linear infinite !important;
-}
-
-.mars {
-  -webkit-animation: mars-orbit-left-reverse 14s linear infinite !important;
-  animation: mars-orbit-left-reverse 14s linear infinite !important;
-}
-
-.earth::after {
-  -webkit-animation: moon-orbit 4s linear infinite !important;
-  animation: moon-orbit 4s linear infinite !important;
-}
-
-.profile-frame-wrapper {
-  -webkit-animation: float 6s ease-in-out infinite !important;
-  animation: float 6s ease-in-out infinite !important;
-}
-
-/* 4. Global override for OS-level "Reduce Motion" settings on all platforms */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    -webkit-animation-duration: unset !important;
-    animation-duration: unset !important;
-    -webkit-animation-iteration-count: infinite !important;
-    animation-iteration-count: infinite !important;
-    -webkit-animation-play-state: running !important;
+  *,
+  *::before,
+  *::after {
+    animation-duration: initial !important;
+    animation-iteration-count: initial !important;
     animation-play-state: running !important;
-    transition-duration: unset !important;
+    animation-delay: initial !important;
+    transition-duration: initial !important;
   }
-  
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
+
+  /* Re-apply hero planet animations specifically */
+  .earth {
+    animation: earth-orbit-top 24s linear infinite !important;
   }
-}
+
+  .mars {
+    animation: mars-orbit-left-reverse 14s linear infinite !important;
+  }
+
+  .earth::after {
+    animation: moon-orbit 4s linear infinite !important;
+  }
+} /*Force all animations and transitions to run globally */
 :root {
   color-scheme: light;
   --bg: #f8f8fc;
@@ -2049,3 +2004,4 @@ textarea:active {
     font-size: 0.66rem;
   }
 }
+
