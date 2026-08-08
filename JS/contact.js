@@ -6,41 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = contactForm.name.value.trim();
-    const contactInput = contactForm.contact ? contactForm.contact.value.trim() : '';
-    const message = contactForm.message.value.trim();
-
-    // 1. Validate Name: must contain at least 2 letters (letters and spaces only)
-    const nameRegex = /^[a-zA-Z\s]{2,50}$/;
-    if (!name || !nameRegex.test(name)) {
-      showNotification('Please enter a valid name (at least 2 letters).', 'warning');
-      contactForm.name.focus();
-      return;
-    }
-
-    // 2. Validate Contact Field: accepts either a valid 10-digit phone number OR a valid email address
-    const phoneRegex = /^[0-9]{10}$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Remove any spaces or hyphens if the user formatted their phone number
-    const cleanedContact = contactInput.replace(/[\s-]/g, '');
-
-    const isPhoneValid = phoneRegex.test(cleanedContact);
-    const isEmailValid = emailRegex.test(contactInput);
-
-    if (!isPhoneValid && !isEmailValid) {
-      showNotification('Please enter a valid 10-digit phone number or email address.', 'warning');
-      if (contactForm.contact) contactForm.contact.focus();
-      return;
-    }
-
-    // 3. Validate Message
-    if (!message) {
-      showNotification('Please enter your message.', 'warning');
-      contactForm.message.focus();
-      return;
-    }
-
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalBtnContent = submitBtn.innerHTML;
 
@@ -49,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.innerHTML = `Sending... <i class="fa-solid fa-spinner fa-spin"></i>`;
 
     const formData = {
-      name,
-      contact: contactInput,
-      message,
+      name: contactForm.name.value.trim(),
+      email: contactForm.email.value.trim(),
+      message: contactForm.message.value.trim(),
     };
 
     try {
@@ -69,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear form fields
         contactForm.reset();
         
-        // Trigger custom success notification
+        // Trigger your custom success notification
         showNotification('Your message has been sent successfully!', 'success');
       } else {
         // Trigger custom error notification
