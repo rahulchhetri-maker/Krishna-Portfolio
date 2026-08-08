@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap");
+/* Force all website animations and transitions globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: inherit !important;
+    animation-iteration-count: inherit !important;
+    animation-play-state: running !important;
+    transition-duration: inherit !important;
+    transition-timing-function: inherit !important;
+  }
+}
 :root {
   color-scheme: light;
   --bg: #f8f8fc;
