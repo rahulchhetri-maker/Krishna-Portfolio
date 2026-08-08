@@ -14,7 +14,7 @@
 
   /* Re-apply continuous keyframe animations with explicit durations */
   body {
-    animation: pageFadeIn 0.5s ease-out forwards !important;
+    animation: pageFadeIn 0.7s ease-out forwards !important;
   }
 
   .profile-frame-wrapper {
