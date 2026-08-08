@@ -1188,9 +1188,15 @@ hr {
   animation: planet-orbit 15s linear infinite;
 }
 
-@keyframes planet-orbit {
-  0%   { offset-distance: 0%; }
-  100% { offset-distance: 100%; }
+@keyframes earth-orbit-top {
+  0%   { offset-distance: 75%; }
+  100% { offset-distance: 175%; }
+}
+
+/* 🔴 Mars: Starts at LEFT (50%), moves in reverse (counter-clockwise) */
+@keyframes mars-orbit-left-reverse {
+  0%   { offset-distance: 50%; }
+  100% { offset-distance: -50%; }
 }
 
 
@@ -1199,15 +1205,10 @@ hr {
 .earth {
   width: 24px;
   height: 24px;
-  /* Deep ocean blue */
   background: radial-gradient(circle at 30% 30%, #4facfe 0%, #00f2fe 50%, #0250c5 100%);
   border-radius: 50%;
-  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6),
-              0 0 10px rgba(79, 172, 254, 0.4);
-  
-  /* Match Mars's starting point */
-  animation: planet-orbit 24s linear infinite;
-  animation-delay: 0s; /* Standard start matching 0% / 100% path origin */
+  box-shadow: inset -3px -3px 6px rgba(0,0,0,0.6), 0 0 10px rgba(79, 172, 254, 0.4);
+  animation: earth-orbit-top 24s linear infinite;
 }
 /* Earth's Green Landmasses */
 .earth::before {
@@ -1248,13 +1249,10 @@ hr {
 .mars {
   width: 18px;
   height: 18px;
-  /* Rusty red/orange gradient */
   background: radial-gradient(circle at 30% 30%, #ff7b54 0%, #c1440e 60%, #8c2a04 100%);
   border-radius: 50%;
-  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.7),
-              0 0 8px rgba(193, 68, 14, 0.4); /* Red atmospheric glow */
-  animation-duration: 14s; /* Faster inner orbit */
-  animation-direction: reverse;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.7), 0 0 8px rgba(193, 68, 14, 0.4);
+  animation: mars-orbit-left-reverse 14s linear infinite;
 }
 
 /* Mars Surface Details (Craters/Texture) */
