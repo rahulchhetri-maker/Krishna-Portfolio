@@ -1453,6 +1453,10 @@ hr {
   font-size: 1.240rem;
 }
 @media (max-width: 845px) {
+  .school-name{
+  font-size: 1.4rem;
+  font-weight: 650;
+  }
   .nav-links-desktop {
     display: none;
   }
