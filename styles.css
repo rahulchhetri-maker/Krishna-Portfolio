@@ -703,7 +703,7 @@ ul {
 .experience-item ul {
   display: grid;
   gap: 0.4rem;
-  max-width: 53ch;
+  max-width: 100ch;
   color: var(--muted);
   font-size: 0.96rem;
   line-height: 1.55;
