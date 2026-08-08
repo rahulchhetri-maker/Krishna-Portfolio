@@ -3,21 +3,17 @@
  * Overrides OS/Browser reduced-motion settings and forces all animations to run.
  */
 (function enforceSiteAnimations() {
-  // 1. Dynamically inject an override stylesheet into <head>
+  // 1. Inject an override stylesheet into <head> without setting duration to 0s
   const style = document.createElement('style');
   style.id = 'force-animations-override';
   style.textContent = `
     /* Override OS/Browser reduced motion restrictions globally */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation-duration: unset !important;
-        animation-delay: unset !important;
-        animation-iteration-count: unset !important;
         animation-play-state: running !important;
-        transition-duration: unset !important;
       }
 
-      /* Explicitly force continuous keyframe animations */
+      /* Explicitly re-declare active keyframe durations */
       body {
         animation: pageFadeIn 0.5s ease-out forwards !important;
       }
@@ -38,7 +34,7 @@
         animation: moon-orbit 4s linear infinite !important;
       }
 
-      /* Ensure scroll reveal elements remain visible */
+      /* Guarantee scroll-reveal elements stay visible on iOS */
       .reveal {
         opacity: 1 !important;
         transform: translateY(0) !important;
@@ -48,13 +44,22 @@
 
   document.head.appendChild(style);
 
-  // 2. Force animation play-state on DOM load
-  document.addEventListener('DOMContentLoaded', () => {
+  // 2. Force running state & reveal visibility on DOM load
+  const runAnimations = () => {
     const animatedElements = document.querySelectorAll(
       '.earth, .mars, .profile-frame-wrapper, .planet, .reveal'
     );
     animatedElements.forEach((el) => {
       el.style.animationPlayState = 'running';
+      if (el.classList.contains('reveal')) {
+        el.classList.add('is-visible');
+      }
     });
-  });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runAnimations);
+  } else {
+    runAnimations();
+  }
 })();
