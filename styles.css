@@ -1189,8 +1189,14 @@ hr {
 }
 
 @keyframes planet-orbit {
-  0%   { offset-distance: 0%; }
+  0%   { offset-distance: 29%; }
   100% { offset-distance: 100%; }
+}
+
+
+/* Update Earth's animation property */
+.p-earth {
+  animation: earth-orbit-behind 18s linear infinite !important;
 }
 
 /* 🌎 Earth (Orbit One) */
@@ -1266,17 +1272,6 @@ hr {
   box-shadow: -4px 6px 0 1px rgba(140, 42, 4, 0.5);
 }
 /* Custom keyframe loop for Earth starting behind the image */
-@keyframes earth-orbit-behind {
-  0%   { offset-distance: 50%; z-index: 1; }  /* Starts at top (behind photo) */
-  49%  { z-index: 1; }                        /* Stays behind while moving across top half */
-  50%  { offset-distance: 100%; z-index: 20; }/* Passes in front across bottom half */
-  100% { offset-distance: 150%; z-index: 20; }
-}
-
-/* Update Earth's animation property */
-.p-earth {
-  animation: earth-orbit-behind 18s linear infinite !important;
-}
 /* =========================================================
    FLOATING PILL TOAST & NEON ALERT BELL
    ========================================================= */
