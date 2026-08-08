@@ -1287,6 +1287,31 @@ hr {
   border-radius: 50%;
   box-shadow: -4px 6px 0 1px rgba(140, 42, 4, 0.5);
 }
+/* Enable smooth movement on inputs and textareas */
+input,
+textarea {
+  transition:
+    border-color 0.2s var(--ease),
+    box-shadow 0.2s var(--ease),
+    transform 0.25s var(--ease);
+}
+
+/* Lift cards and form inputs upward on hover, focus, and click */
+.card:hover,
+.card:focus-within,
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  transform: translateY(-4px);
+}
+
+/* Optional: Slight press-down effect when actively clicking down */
+.card:active,
+input:active,
+textarea:active {
+  transform: translateY(-1px);
+}
 /* Custom keyframe loop for Earth starting behind the image */
 /* =========================================================
    FLOATING PILL TOAST & NEON ALERT BELL
