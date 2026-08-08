@@ -1,32 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap");
 /* Force all website animations and transitions globally */
+/* Unconditionally force all animations across the site */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: inherit !important;
-    animation-iteration-count: inherit !important;
+    animation-duration: initial !important;
+    animation-iteration-count: initial !important;
     animation-play-state: running !important;
-    transition-duration: inherit !important;
-    transition-timing-function: inherit !important;
+    animation-delay: initial !important;
+    transition-duration: initial !important;
   }
-}
-/* Force all animations and transitions to run globally */
-*,
-*::before,
-*::after {
-  animation-play-state: running !important;
-  transition: all 0.2s var(--ease) !important; /* Preserves smooth hover effects */
-}
 
-/* Ensure keyframe animations run continuously */
-.planet,
-.earth,
-.mars 
-{
-  animation-play-state: running !important;
-}
+  /* Re-apply hero planet animations specifically */
+  .earth {
+    animation: earth-orbit-top 24s linear infinite !important;
+  }
+
+  .mars {
+    animation: mars-orbit-left-reverse 14s linear infinite !important;
+  }
+
+  .earth::after {
+    animation: moon-orbit 4s linear infinite !important;
+  }
+} /*Force all animations and transitions to run globally */
 :root {
   color-scheme: light;
   --bg: #f8f8fc;
