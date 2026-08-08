@@ -1453,6 +1453,22 @@ hr {
   font-size: 1.240rem;
 }
 @media (max-width: 845px) {
+  .hero-orbit {
+  position: absolute;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+.orbit-one {
+  width: 50%;
+  height: 79%;
+  transform: rotate(-12deg);
+}
+.orbit-two {
+  width: 40%;
+  height: 107%;
+  transform: rotate(27deg);
+}
   .school-name{
   font-size: 1.2rem;
   font-weight: 610;
