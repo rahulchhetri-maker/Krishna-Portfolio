@@ -34,10 +34,7 @@
   }
 
   /* Force hidden reveal elements to be visible */
-  .reveal {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
+
 } /*Force all animations and transitions to run globally */
 :root {
   color-scheme: light;
