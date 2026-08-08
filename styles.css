@@ -1209,8 +1209,8 @@ hr {
 .earth::before {
   content: '';
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 30%;
+  left: 50%;
   width: 10px;
   height: 8px;
   background: #38b000; /* Vibrant green */
