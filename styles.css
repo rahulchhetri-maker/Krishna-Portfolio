@@ -1173,6 +1173,26 @@ hr {
    ========================================================= */
 
 /* Invisible tracks perfectly overlaying your existing orbit lines */
+/* Accessibility Fallback: Fix planet positions when motion is disabled */
+@media (prefers-reduced-motion: reduce) {
+  /* Stop animation loops gently */
+  .planet,
+  .earth,
+  .mars,
+  .earth::after {
+    animation: none !important;
+  }
+
+  /* Force Earth to stay fixed at the Top */
+  .earth {
+    offset-distance: 75% !important;
+  }
+
+  /* Force Mars to stay fixed at the Left */
+  .mars {
+    offset-distance: 50% !important;
+  }
+}
 .planet-track {
   position: absolute;
   border-radius: 50%;
