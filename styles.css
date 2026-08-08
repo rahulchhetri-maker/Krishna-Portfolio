@@ -1460,13 +1460,13 @@ hr {
   opacity: 0.3;
 }
 .orbit-one {
-  width: 50%;
+  width: 70%;
   height: 79%;
   transform: rotate(-12deg);
 }
 .orbit-two {
-  width: 40%;
-  height: 107%;
+  width: 35%;
+  height: 120%;
   transform: rotate(27deg);
 }
   .school-name{
