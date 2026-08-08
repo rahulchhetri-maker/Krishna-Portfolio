@@ -1120,8 +1120,14 @@ hr {
 .label-after {
   right: 1rem;
 }
-.reveal {
-opacity: 0;
+/* .reveal is visible by default. It's only hidden pre-animation when
+   the html.js-reveal-ready class is present, which the early inline
+   script in <head> adds ONLY if this browser supports the JS needed
+   to reveal it again. If that script is blocked, fails, or the
+   browser is old, content simply stays visible — never stuck at
+   opacity:0. */
+.js-reveal-ready .reveal {
+  opacity: 0;
   transform: translateY(35px);
   transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }

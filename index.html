@@ -9,6 +9,16 @@
     />
     <meta name="theme-color" content="#f7f7fb" />
     <title>Krishna Aryal · Portfolio</title>
+    <script>
+      // Runs before anything paints. Only hide .reveal elements for the
+      // fade/slide-in effect if this browser can actually run the reveal
+      // JS (IntersectionObserver support). If this script is blocked,
+      // fails, or the browser is old, .reveal content stays visible by
+      // default (see styles.css) instead of being stuck invisible.
+      if ('IntersectionObserver' in window) {
+        document.documentElement.classList.add('js-reveal-ready');
+      }
+    </script>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
     <link
       rel="stylesheet"
@@ -17,7 +27,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700npm.cmd install next react react-dom&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Mono&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -241,34 +251,26 @@
           </div>
           <article class="card education-card reveal">
             <div class="card-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-school"></i>
             </div>
             <div>
-              <h3>[School/College Name]</h3>
+              <h3>Devdaha Buddha Public English Bording High School</h3>
               <p class="muted">
-                <strong>[Degree/Major]</strong> <span class="divider">|</span>
+                <strong>Higher Secondary Education (+2) — Finance</strong> <span class="divider">|</span>
                 <em>[Duration, e.g., 2020 – 2024]</em>
               </p>
-              <ul>
-                <li>
-                  [Optional Achievement, e.g., Relevant Coursework/Honors]
-                </li>
-              </ul>
             </div>
           </article>
           <article class="card education-card reveal" style="margin-top: 1.5rem;">
             <div class="card-icon">
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-book-open"></i>
             </div>
             <div>
-              <h3>[Diploma Institution Name]</h3>
+              <h3>Right Step Institute</h3>
               <p class="muted">
-                <strong>[Diploma Title]</strong> <span class="divider">|</span>
-                <em>[Duration, e.g., 2018 – 2020]</em>
+                <strong>Diploma in Computer Science</strong> <span class="divider">|</span>
+                <em>Feb 2017 – Feb 2019</em>
               </p>
-              <ul>
-                <li>[Relevant Coursework / Focus / Honor]</li>
-              </ul>
             </div>
           </article>
         </div>

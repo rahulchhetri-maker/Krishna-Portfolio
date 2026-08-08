@@ -6,14 +6,23 @@ function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
 
+  // Grab the Kick logo element
+  const kickLogo = document.getElementById('kick-logo');
+
   if (theme === 'dark') {
     themeToggleBtn.setAttribute('aria-pressed', 'false');
     themeToggleIcon.className = 'fa-solid fa-moon';
     themeToggleText.textContent = 'Dark';
+
+    // Show Light Logo in Dark Mode
+    if (kickLogo) kickLogo.src = 'assets/Kick_Logo_Light.png';
   } else {
     themeToggleBtn.setAttribute('aria-pressed', 'true');
     themeToggleIcon.className = 'fa-solid fa-sun';
     themeToggleText.textContent = 'Light';
+
+    // Show Dark Logo in Light Mode
+    if (kickLogo) kickLogo.src = 'assets/Kick_Logo_Dark.png';
   }
 }
 
@@ -125,29 +134,6 @@ window.addEventListener('popstate', () => {
     isMenuOpen = false;
   }
 });
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('theme', theme);
-
-  // Grab the Kick logo element
-  const kickLogo = document.getElementById('kick-logo');
-
-  if (theme === 'dark') {
-    themeToggleBtn.setAttribute('aria-pressed', 'false');
-    themeToggleIcon.className = 'fa-solid fa-moon';
-    themeToggleText.textContent = 'Dark';
-    
-    // Show Light Logo in Dark Mode
-    if (kickLogo) kickLogo.src = 'assets/Kick_Logo_Light.png';
-  } else {
-    themeToggleBtn.setAttribute('aria-pressed', 'true');
-    themeToggleIcon.className = 'fa-solid fa-sun';
-    themeToggleText.textContent = 'Light';
-    
-    // Show Dark Logo in Light Mode
-    if (kickLogo) kickLogo.src = 'assets/Kick_Logo_Dark.png';
-  }
-}
 const siteMenu = document.querySelector('.site-menu');
 let isMenuOpen = false;
 
@@ -177,7 +163,16 @@ if (siteMenu) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll('.reveal');
-  
+  if (!revealElements.length) return;
+
+  // Feature check: if this browser somehow lacks IntersectionObserver
+  // despite reaching this point, just show everything instead of
+  // leaving it invisible.
+  if (!('IntersectionObserver' in window)) {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -192,4 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
+
+  // Safety net: if anything unexpected stops an element from ever
+  // intersecting (odd layout edge case, tab backgrounded on load, etc.),
+  // force it visible after 3s so it's never permanently stuck hidden.
+  setTimeout(() => {
+    revealElements.forEach(el => el.classList.add('is-visible'));
+  }, 3000);
 });
