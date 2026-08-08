@@ -558,12 +558,24 @@ ul {
 .section-heading h2 {
   text-wrap: balance;
 }
+.subtitle{
+  font-style: italic;
+  font-family: sans-serif;
+}
 .about-grid {
-  display: flex;
-  grid-template-columns: 0.68fr 1.32fr;
+  display: grid; 
+  grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
   gap: clamp(3rem, 9vw, 9rem);
-  align-items: start;
+  align-items: center;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 900px;
+}
+.about-text{
+  font-size: 1.3rem;
+  line-height: 1.65;
+  font-weight: 400;
 }
 .content-stack {
   display: grid;
@@ -703,7 +715,7 @@ ul {
 .experience-item ul {
   display: grid;
   gap: 0.4rem;
-  max-width: 100ch;
+  max-width: ch;
   color: var(--muted);
   font-size: 0.96rem;
   line-height: 1.55;
